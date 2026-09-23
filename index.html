@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carte Interactive - Codes Postaux & Adresses</title>
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    
     <!-- Tailwind CSS pour le style rapide et moderne -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -94,7 +97,7 @@
                     <input type="text" id="input-address" placeholder="Adresse complète" class="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 outline-none" required>
                     <div class="flex items-center justify-between gap-3">
                         <div class="flex items-center gap-2">
-                            <!-- NOUVEAU : Choix de la couleur pour l'adresse -->
+                            <!-- Choix de la couleur pour l'adresse -->
                             <input type="color" id="color-address" value="#10b981" class="h-8 w-12 cursor-pointer rounded border border-slate-200 p-0.5">
                             <span class="text-xs text-slate-500">Couleur</span>
                         </div>
@@ -172,7 +175,7 @@
             }
         }
 
-        // NOUVEAU : Création d'une icône de marqueur personnalisée modifiable
+        // Création d'une icône de marqueur personnalisée modifiable
         function createCustomIcon(color) {
             return L.divIcon({
                 className: 'custom-div-icon',
@@ -183,7 +186,7 @@
             });
         }
 
-        // MODIFIÉ : Ajouter un élément à l'UI avec le sélecteur de modification de couleur
+        // Ajouter un élément à l'UI avec le sélecteur de modification de couleur
         function addToListUI(id, title, subtitle, icon, colorHex) {
             const ul = document.getElementById('places-list');
             const li = document.createElement('li');
@@ -213,7 +216,7 @@
             toggleEmptyState();
         }
 
-        // NOUVEAU : Fonction pour mettre à jour la couleur d'un calque (marqueur ou polygone) depuis la liste
+        // Fonction pour mettre à jour la couleur d'un calque (marqueur ou polygone) depuis la liste
         window.updateLayerColor = function(id, newColor) {
             const layerObj = layers[id];
             if (!layerObj) return;
